@@ -1,0 +1,40 @@
+#FrontPage{
+	background-image: url("Front.png");
+    background-repeat:no-repeat;
+    background-size:100%;
+    width:1500px;
+    height:740px;
+    margin: auto;
+}
+
+#GetApp{
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    left: 900px;
+    top: 550px;
+    font-family: CentryGothic;
+    font-size: 18px;
+    padding: 10px 55px;
+    color: white;
+    background-color: #2EB69E;
+}
+
+#LogIn{
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    left: 920px;
+    top: 550px;
+    font-family: CentryGothic;
+    font-size: 18px;
+    padding: 10px 65px;
+    color: #2EB69E;
+    background-color: white;
+    border: solid;
+}
+
+.button_PPAP:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.8s;
+}
