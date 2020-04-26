@@ -1,17 +1,71 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title> Front Page </title>
+		<title> Live Agent Test 2 </title>
 		<link href = "app.css" rel = "stylesheet">
 	</head>
 	<body>
-		<div id = "FrontPage">
-			<a href = "https://play.google.com/store/apps?utm_source=apac_med&utm_medium=hasem&utm_content=Feb2317&utm_campaign=Evergreen&pcampaignid=MKT-DR-apac-tw-1000277-med-hasem-py-Evergreen-Feb2317-Text_Search_BKWS-BKWS%7cONSEM_kwid_43700011378110954&gclid=CjwKEAjw5M3GBRCTvpK4osqj4X4SJAABRJNCDh8CktnLR1F_Gc7FVvQ-Oy_5MALBRP8INOPePffNlxoCTkHw_wcB&gclsrc=aw.ds">
-				<input type = "button" class = "button_PPAP" id = "GetApp" value = "Get APP">
-			</a>
-			<a href = "https://likeneverdie.github.io/uidd2017_LogIn/">
-				<input type = "button" class = "button_PPAP" id = "LogIn" value = "Log In">
-			</a>
-		</div>
+		<style type='text/css'>
+	.embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+		</style>
+
+		<script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
+		<script type='text/javascript'>
+		var initESW = function(gslbBaseURL) {
+			embedded_svc.settings.displayHelpButton = true; //Or false
+			embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
+
+			//embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+			//embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
+
+			//embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
+			//embedded_svc.settings.storageDomain = 'yourdomain.com'; //(Sets the domain for your deployment so that visitors can navigate subdomains during a chat session)
+
+			// Settings for Chat
+			//embedded_svc.settings.directToButtonRouting = function(prechatFormData) {
+				// Dynamically changes the button ID based on what the visitor enters in the pre-chat form.
+				// Returns a valid button ID.
+			//};
+			//embedded_svc.settings.prepopulatedPrechatFields = {}; //Sets the auto-population of pre-chat form fields
+			//embedded_svc.settings.fallbackRouting = []; //An array of button IDs, user IDs, or userId_buttonId
+			//embedded_svc.settings.offlineSupportMinimizedText = '...'; //(Defaults to Contact Us)
+
+			embedded_svc.settings.enabledFeatures = ['LiveAgent'];
+			embedded_svc.settings.entryFeature = 'LiveAgent';
+
+			embedded_svc.init(
+				'https://cunning-moose-zraq5-dev-ed.my.salesforce.com',
+				'https://hankishandsome-developer-edition.ap17.force.com/',
+				gslbBaseURL,
+				'00D2x000000qIOu',
+				'ENG_group',
+				{
+					baseLiveAgentContentURL: 'https://c.la2-c2-hnd.salesforceliveagent.com/content',
+					deploymentId: '5722x0000004HzZ',
+					buttonId: '5732x0000004IC7',
+					baseLiveAgentURL: 'https://d.la2-c2-hnd.salesforceliveagent.com/chat',
+					eswLiveAgentDevName: 'ENG_group',
+					isOfflineSupportEnabled: false
+				}
+			);
+		};
+
+		if (!window.embedded_svc) {
+			var s = document.createElement('script');
+			s.setAttribute('src', 'https://cunning-moose-zraq5-dev-ed.my.salesforce.com/embeddedservice/5.0/esw.min.js');
+			s.onload = function() {
+				initESW(null);
+			};
+			document.body.appendChild(s);
+		} else {
+			initESW('https://service.force.com');
+		}
+		</script>
 	</body>
 </html>
